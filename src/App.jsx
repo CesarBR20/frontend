@@ -3,7 +3,6 @@ import Navbar from "./Components/Navbar/Navbar";
 import LoginModal from "./Components/LoginModal/LoginModal";
 import AdminPage from "./Components/Admin/AdminPage";
 import ClientPage from "./Components/Cliente/ClientePage";
-import api from "./api/axiosConfig"
 import axios from "axios";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 
