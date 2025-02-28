@@ -1,0 +1,55 @@
+/* Estilo de la navbar */
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 80px;
+    width: 100%;
+    padding: 20px 25%;  /* Puedes ajustar este padding si necesitas */
+    background-color: white;
+    display: flex;
+    justify-content: space-between; 
+    z-index: 1000; /* Asegura que la navbar esté encima de otros elementos */
+}
+
+/* Estilo de la logo */
+.logo img {
+    height: 45px;
+    width: auto;
+}
+
+/* Estilo de la navbar */
+.navbar {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+
+/* Estilo de los enlaces en la navbar */
+.navbar a {
+    position: relative;
+    font-size: 15px;
+    color: black;
+    font-weight: 500;
+}
+
+/* Efecto de subrayado en los enlaces */
+.navbar a::before {
+    content: '';
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0%;
+    height: 2px;
+    background-color: black;
+    transition: .3s;
+}
+
+.navbar a:hover::before {
+    width: 100%;
+}
+
+/* Estilo para el contenido de la página */
+body {
+    margin-top: 80px; /* Deja espacio para la navbar fija */
+}

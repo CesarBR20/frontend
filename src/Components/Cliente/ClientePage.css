@@ -1,0 +1,362 @@
+/* 📌 Contenedor general */
+.client-container {
+  min-height: 100vh;
+  background-color: #EAE1CE;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  overflow: hidden;
+}
+
+/* 📌 Estilos del título principal */
+h2 {
+  font-size: 22px;
+  margin-bottom: 15px;
+}
+
+/* 📌 Contenedor de los términos y condiciones */
+.terms-modal {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 500px;
+  margin-top: 40px;
+}
+
+.terms-modal h3 {
+  font-size: 20px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.terms-modal p {
+  font-size: 16px;
+  margin-bottom: 15px;
+}
+
+/* 📌 Botón para aceptar términos */
+.blue-button {
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.blue-button:hover {
+  background-color: #0056b3;
+}
+
+.blue-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 📌 Contenedor de subida de archivos */
+.upload-container {
+  background: white;
+  padding: 25px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 1480px;
+  text-align: center;
+  margin-top: 40px;
+}
+
+/* 📌 Instrucciones de carga */
+.instructions {
+  text-align: left;
+  margin-bottom: 20px;
+}
+
+.instructions p {
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.instructions ul {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+.instructions li {
+  font-size: 14px;
+  margin-bottom: 8px;
+}
+
+/* 📌 Enlace de descarga */
+.format-link {
+  color: #007BFF;
+  text-decoration: underline;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.format-link:hover {
+  text-decoration: none;
+}
+
+/* 📌 Contenedor de los botones de subida */
+.upload-box {
+  background: #f9f9f9;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+  margin-top: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* 📌 Sección de subida de archivos */
+.file-upload-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 15px;
+  width: 100%;
+}
+
+/* 📌 Botón personalizado para subida */
+.upload-button {
+  background: white;
+  border: 1px solid #ccc;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  transition: background 0.3s;
+  width: 100%;
+  text-align: center;
+  justify-content: center;
+}
+
+.upload-button:hover {
+  background: #e0e0e0;
+}
+
+.upload-button input {
+  display: none;
+}
+
+/* 📌 Contenedor de los botones */
+.button-container {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  margin-top: 10px;
+}
+
+/* 📌 Botón de subir */
+.submit-button {
+  background-color: #007BFF;
+  color: white;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+  font-size: 14px;
+  transition: background 0.3s;
+}
+
+.submit-button:hover {
+  background-color: #0056b3;
+}
+
+.submit-button:disabled {
+  background-color: #ccc;
+  cursor: not-allowed;
+}
+
+/* 📌 Contenedor de archivos seleccionados */
+.file-preview-list {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  max-height: 200px;
+  overflow-y: auto;
+  width: 100%;
+  padding: 10px;
+  background: #f9f9f9;
+  border-radius: 8px;
+}
+
+/* 📌 Estilos de archivos seleccionados */
+.file-preview {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #ffffff;
+  padding: 8px 12px;
+  border-radius: 5px;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+  width: 100%;
+}
+
+.file-preview span {
+  flex-grow: 1;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* 📌 Botón para eliminar archivos */
+.remove-button {
+  background: none;
+  border: none;
+  color: red;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.remove-button:hover {
+  color: darkred;
+}
+
+/* 📌 Logs de subida */
+.upload-logs {
+  padding: 15px;
+  background: #f8f8f8;
+  border-radius: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.upload-logs ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+/* 📌 Barra de progreso */
+.progress-bar {
+  width: 100%;
+  background: #ccc;
+  border-radius: 5px;
+  overflow: hidden;
+  margin-top: 10px;
+}
+
+.progress-fill {
+  height: 10px;
+  background: #007BFF;
+  width: 0%;
+  transition: width 0.4s ease-in-out;
+  text-align: center;
+  color: white;
+  font-size: 12px;
+  line-height: 10px;
+}
+
+progress {
+  width: 100%;
+  height: 10px;
+  margin-top: 10px;
+}
+
+/* 📌 Estilos de la tabla */
+.table-container {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  width: 90%;
+  max-width: 1800px;
+  overflow: hidden;
+  position: relative;
+  height: 75vh;
+  margin-top: 20px;
+}
+
+/* 📌 Encabezados fijos */
+.fixed-header {
+  background-color: white;
+  padding-bottom: 10px;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+}
+
+/* 📌 Scroll de la tabla */
+.table-scroll {
+  flex-grow: 1;
+  overflow-y: auto;
+  overflow-x: auto;
+  border-top: 2px solid #ddd;
+  max-height: 60vh;
+}
+
+/* 📌 Estilos de la tabla */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: white;
+}
+
+/* 📌 Encabezados */
+th {
+  background-color: #f2f2f2;
+  font-weight: bold;
+  padding: 12px;
+  border-bottom: 2px solid #ddd;
+  position: sticky;
+  top: 0;
+  z-index: 5;
+}
+
+/* 📌 Celdas */
+td {
+  padding: 12px;
+  border-bottom: 1px solid #ddd;
+}
+
+/* 📌 Hover en filas */
+tr:hover {
+  background-color: #e9e9e9af;
+  cursor: pointer;
+}
+
+/* 📌 Filas alternas */
+tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+
+/* 📌 Input de búsqueda en la tabla */
+.cfdi-search-input {
+  width: 250px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  font-size: 14px;
+}
+
+/* 📌 Alinear columnas de Totales a la derecha */
+.cfdi-table td.total,
+.cfdi-table th.total {
+  text-align: right;
+}
+
+/* 📌 Contenedor del título y la búsqueda */
+.client-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  margin-bottom: 10px;
+}
