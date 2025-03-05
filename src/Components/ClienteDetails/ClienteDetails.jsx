@@ -10,7 +10,7 @@ const ClienteDetails = () => {
   useEffect(() => {
     const fetchCFDIs = async () => {
       try {
-        const response = await axios.get(`https://backend-app-e5e558224622.herokuapp.com/clients/cfdis?username=${username}`, {
+        const response = await axios.get(`https://backend-app-9e056ec1a11d.herokuapp.com/clients/cfdis?username=${username}`, {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setCfdis(response.data);

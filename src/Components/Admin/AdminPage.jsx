@@ -21,7 +21,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const response = await axios.get("https://backend-app-e5e558224622.herokuapp.com/clients", {
+        const response = await axios.get("https://backend-app-9e056ec1a11d.herokuapp.com/clients", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setClientes(response.data);
@@ -43,7 +43,7 @@ const AdminPage = () => {
     setSelectedCliente(cliente);
     setShowTable(true);
     try {
-      const response = await axios.get(`https://backend-app-e5e558224622.herokuapp.com/clients/cfdis?username=${cliente.username}`, {
+      const response = await axios.get(`https://backend-app-9e056ec1a11d.herokuapp.com/clients/cfdis?username=${cliente.username}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setCfdis(response.data);
@@ -100,6 +100,7 @@ const AdminPage = () => {
     }
     
     const formattedData = filteredCfdis.map(cfdi => ({
+      "UUID": cfdi.uuid,
       "RFC Emisor": cfdi.emisorRfc,
       "Nombre o Razón Emisor": cfdi.emisorNombre,
       "RFC Receptor": cfdi.receptorRfc,
@@ -120,14 +121,14 @@ const AdminPage = () => {
   const handleRegisterClient = async (e) => {
     e.preventDefault();
     try {
-        await axios.post("https://backend-app-e5e558224622.herokuapp.com/admin/clients", newClient, {
+        await axios.post("https://backend-app-9e056ec1a11d.herokuapp.com/admin/clients", newClient, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         
       setNewClient({ username: "", password: "" });
       setShowRegisterForm(false);
       // Actualizar la lista de clientes
-      const response = await axios.get("https://backend-app-e5e558224622.herokuapp.com/clients", {
+      const response = await axios.get("https://backend-app-9e056ec1a11d.herokuapp.com/clients", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setClientes(response.data);
@@ -256,6 +257,7 @@ const AdminPage = () => {
             <table className="cfdi-table">
               <thead>
                 <tr>
+                  <th> UUID</th>
                   <th onClick={() => handleSort("emisorRfc")}>
                     RFC Emisor {sortConfig.key === "emisorRfc" ? (sortConfig.direction === "asc" ? "▲" : "▼") : ""}
                   </th>
@@ -279,6 +281,7 @@ const AdminPage = () => {
                 {filteredCfdis.length > 0 ? (
                   filteredCfdis.map((cfdi, index) => (
                     <tr key={index}>
+                      <td>{cfdi.uuid}</td>
                       <td>{cfdi.emisorRfc}</td>
                       <td>{cfdi.emisorNombre}</td>
                       <td>{cfdi.receptorRfc}</td>
@@ -300,7 +303,7 @@ const AdminPage = () => {
                   ))
                 ) : (
                   <tr>
-                    <td colSpan="9">No se encontró información</td>
+                    <td colSpan="10">No se encontró información</td>
                   </tr>
                 )}
               </tbody>

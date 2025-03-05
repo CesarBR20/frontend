@@ -19,7 +19,7 @@ const ClientePage = () => {
   /** 📌 Aceptar términos y condiciones */
   const acceptTerms = async () => {
     try {
-      await axios.patch("https://backend-app-e5e558224622.herokuapp.com/clients/accept-terms", {}, {
+      await axios.patch("https://backend-app-9e056ec1a11d.herokuapp.com/clients/accept-terms", {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setShowTerms(false);
@@ -31,7 +31,7 @@ const ClientePage = () => {
   /** 📌 Descargar formato */
   const downloadFormat = async () => {
     try {
-      const response = await axios.get("https://backend-app-e5e558224622.herokuapp.com/files/download-excel", {
+      const response = await axios.get("https://backend-app-9e056ec1a11d.herokuapp.com/files/download-excel", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       window.location.href = response.data.downloadUrl;
@@ -73,7 +73,7 @@ const ClientePage = () => {
     xmlFiles.forEach((file) => formData.append("files", file));
 
     try {
-      await axios.post("https://backend-app-e5e558224622.herokuapp.com/files/upload", formData, {
+      await axios.post("https://backend-app-9e056ec1a11d.herokuapp.com/files/upload", formData, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
           "Content-Type": "multipart/form-data",
@@ -103,7 +103,7 @@ const ClientePage = () => {
 
     try {
       // Procesar los archivos
-      const processResponse = await axios.post("https://backend-app-e5e558224622.herokuapp.com/files/process-cfdis", {}, {
+      const processResponse = await axios.post("https://backend-app-9e056ec1a11d.herokuapp.com/files/process-cfdis", {}, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
 
@@ -132,7 +132,7 @@ const ClientePage = () => {
         return;
       }
   
-      const response = await axios.get(`https://backend-app-e5e558224622.herokuapp.com/files/list-cfdis?username=${username}`, {
+      const response = await axios.get(`https://backend-app-9e056ec1a11d.herokuapp.com/files/list-cfdis?username=${username}`, {
         headers: { Authorization: `Bearer ${token}` },
       });
   
