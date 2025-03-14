@@ -21,7 +21,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const response = await axios.get("https://backend-app-9e056ec1a11d.herokuapp.com/clients", {
+        const response = await axios.get("http://34.230.21.209:3000/clients", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setClientes(response.data);
@@ -43,7 +43,7 @@ const AdminPage = () => {
     setSelectedCliente(cliente);
     setShowTable(true);
     try {
-      const response = await axios.get(`https://backend-app-9e056ec1a11d.herokuapp.com/clients/cfdis?username=${cliente.username}`, {
+      const response = await axios.get(`http://34.230.21.209:3000/clients/cfdis?username=${cliente.username}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setCfdis(response.data);
@@ -121,14 +121,14 @@ const AdminPage = () => {
   const handleRegisterClient = async (e) => {
     e.preventDefault();
     try {
-        await axios.post("https://backend-app-9e056ec1a11d.herokuapp.com/admin/clients", newClient, {
+        await axios.post("http://34.230.21.209:3000/admin/clients", newClient, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         
       setNewClient({ username: "", password: "" });
       setShowRegisterForm(false);
       // Actualizar la lista de clientes
-      const response = await axios.get("https://backend-app-9e056ec1a11d.herokuapp.com/clients", {
+      const response = await axios.get("http://34.230.21.209:3000/clients", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setClientes(response.data);

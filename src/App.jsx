@@ -30,8 +30,8 @@ const App = () => {
   const handleLogin = async (user, password) => {
     try {
         let loginUrl = user === "admin" 
-            ? "https://backend-app-9e056ec1a11d.herokuapp.com/auth/login" 
-            : "https://backend-app-9e056ec1a11d.herokuapp.com/auth/client/login";
+            ? "http://34.230.21.209:3000/auth/login" 
+            : "http://34.230.21.209:3000/auth/client/login";
 
         console.log("Intentando iniciar sesión en:", loginUrl);
 
