@@ -21,7 +21,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const response = await axios.get("/api/clients", {
+        const response = await axios.get("http://35.172.220.219:3000/clients", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setClientes(response.data);
@@ -43,7 +43,7 @@ const AdminPage = () => {
     setSelectedCliente(cliente);
     setShowTable(true);
     try {
-      const response = await axios.get(`/api/clients/cfdis?username=${cliente.username}`, {
+      const response = await axios.get(`http://35.172.220.219:3000/clients/cfdis?username=${cliente.username}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setCfdis(response.data);

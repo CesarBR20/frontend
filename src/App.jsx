@@ -30,8 +30,8 @@ const App = () => {
   const handleLogin = async (user, password) => {
     try {
         let loginUrl = user === "admin" 
-            ? "/api/auth/login" 
-            : "/api/auth/client/login";
+            ? "http://35.172.220.219:3000/auth/login" 
+            : "http://35.172.220.219:3000/auth/client/login";
 
         console.log("Intentando iniciar sesión en:", loginUrl);
 
