@@ -21,7 +21,7 @@ const AdminPage = () => {
   useEffect(() => {
     const fetchClientes = async () => {
       try {
-        const response = await axios.get("http://34.230.21.209:3000/clients", {
+        const response = await axios.get("/api/clients", {
           headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         setClientes(response.data);
@@ -43,7 +43,7 @@ const AdminPage = () => {
     setSelectedCliente(cliente);
     setShowTable(true);
     try {
-      const response = await axios.get(`http://34.230.21.209:3000/clients/cfdis?username=${cliente.username}`, {
+      const response = await axios.get(`/api/clients/cfdis?username=${cliente.username}`, {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setCfdis(response.data);
@@ -121,14 +121,14 @@ const AdminPage = () => {
   const handleRegisterClient = async (e) => {
     e.preventDefault();
     try {
-        await axios.post("http://34.230.21.209:3000/admin/clients", newClient, {
+        await axios.post("/api/admin/clients", newClient, {
             headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
         });
         
       setNewClient({ username: "", password: "" });
       setShowRegisterForm(false);
       // Actualizar la lista de clientes
-      const response = await axios.get("http://34.230.21.209:3000/clients", {
+      const response = await axios.get("/api/clients", {
         headers: { Authorization: `Bearer ${localStorage.getItem("token")}` },
       });
       setClientes(response.data);
